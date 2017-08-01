@@ -19,7 +19,7 @@ public class CourseType extends BaseModel {
 	//类型名称
 	private String type_name;
 	//专业编码
-	private Integer major_id;
+	private Integer majorid;
 	
 	
 	@AutoID
@@ -41,12 +41,11 @@ public class CourseType extends BaseModel {
 	public void setType_name(String type_name) {
 		this.type_name = type_name;
 	}
-	public Integer getMajor_id() {
-		return major_id;
+	public Integer getMajorid() {
+		return majorid;
 	}
-	public void setMajor_id(Integer major_id) {
-		this.major_id = major_id;
+	public void setMajorid(Integer majorid) {
+		this.majorid = majorid;
 	}
-	
 	
 }

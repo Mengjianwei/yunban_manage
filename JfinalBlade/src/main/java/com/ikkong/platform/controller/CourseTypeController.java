@@ -8,10 +8,10 @@ import com.ikkong.platform.service.impl.CourseTypeServiceImpl;
 import com.ikkong.system.controller.base.UrlPermissController;
 
 public class CourseTypeController extends UrlPermissController {
-	private static String CODE = "CourseType";
+	private static String CODE = "courseType";
 	private static String PERFIX = "yb_course_type";
 	private static String LIST_SOURCE = "CourseType.list";
-	private static String BASE_PATH = "/platform/CourseType/";
+	private static String BASE_PATH = "/platform/courseType/";
 	
 	CourseTypeService service = new CourseTypeServiceImpl();
 	

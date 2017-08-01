@@ -12,9 +12,9 @@
 	function initGrid(){
 		var grid_url = ctx + "/${code}/list";
 		var _colnames = ["ID", "编码", "课程", "专业"];
-		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
+		var _colmodel = [{name:"id", index:"id", width:100},
 						{name:"type_code", index:"type_code", width:100},
-						{name:"type_name", index:"type_name", width:100,hidden:true},
+						{name:"type_name", index:"type_name", width:100},
 						{name:"major_name", index:"majorid", width:100}];
 
 		jQuery(grid_selector).jqGrid({
@@ -41,9 +41,8 @@
 			<!-- 配置 查询 -->
 			@ var _col=[
 			@		{name:"ID", index:"id", type:"text"},
-			@		{name:"用户名", index:"user_name", type:"text"},
-			@		{name:"密码", index:"user_password", type:"text"},
-			@		{name:"班级", index:"clazz_id", type:"selectself_clazz_name"},
+			@		{name:"编码", index:"type_code", type:"text"},
+			@		{name:"课程", index:"type_name", type:"text"},
 			@		{name:"专业", index:"majorid", type:"selectself_major_name"}
 			@];
 			@ include("/common/_function/_search.html",{"col":_col}){}
