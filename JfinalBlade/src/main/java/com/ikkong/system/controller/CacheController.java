@@ -334,6 +334,8 @@ public class CacheController extends BaseController{
 		List<Record> dict = new ArrayList<Record>();
 		if (col.equals("major_name")) {
 			dict = Db.init().selectList("select id as ID,major_name as TEXT from  yb_major");
+		}else if (col.equals("clazz_name")) {
+			dict = Db.init().selectList("select id as ID,clazz_name as TEXT from  yb_clazz");
 		}
 		StringBuilder sb = new StringBuilder();
 		sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs"

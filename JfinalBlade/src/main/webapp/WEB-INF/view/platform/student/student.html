@@ -15,7 +15,7 @@
 		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
 						{name:"user_name", index:"user_name", width:100},
 						{name:"user_password", index:"user_password", width:100,hidden:true},
-						{name:"user_clazz", index:"user_clazz", width:100},
+						{name:"clazz_name", index:"clazz_id", width:100},
 						{name:"major_name", index:"majorid", width:100}];
 
 		jQuery(grid_selector).jqGrid({
@@ -44,7 +44,7 @@
 			@		{name:"ID", index:"id", type:"text"},
 			@		{name:"用户名", index:"user_name", type:"text"},
 			@		{name:"密码", index:"user_password", type:"text"},
-			@		{name:"班级", index:"clazz_id", type:"text"},
+			@		{name:"班级", index:"clazz_id", type:"selectself_clazz_name"},
 			@		{name:"专业", index:"majorid", type:"selectself_major_name"}
 			@];
 			@ include("/common/_function/_search.html",{"col":_col}){}
