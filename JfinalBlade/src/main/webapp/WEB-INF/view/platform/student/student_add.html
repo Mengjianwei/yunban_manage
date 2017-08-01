@@ -4,11 +4,10 @@
 		<!-- 表单 -->
 		@ var _table="yb_student";
 		@ var _col=[
-		@			  {name:"标题", index:"f_it_title", type:"text",newline:true,length:8,required:"required"},
-		@			  {name:"状态", index:"f_it_del", type:"select_902",newline:true,length:3,required:"required",table:"tb_tfw_blog"},
-		@			  {name:"排序", index:"f_it_seq", type:"text",newline:false,length:3,required:"required"},
-		@			  {name:"创建时间", index:"f_it_createtime", type:"laydate",value:func.getTime(),newline:true,length:8,required:"required"},
-		@			  {name:"内容", index:"f_it_content", type:"ueditor",newline:true,length:8,required:"required"}
+		@			  {name:"用户名", index:"user_name", type:"text",newline:true,length:3,required:"required"},
+		@			  {name:"密码", index:"user_password", type:"text",value:1234,newline:false,length:3,required:"required"},
+		@			  {name:"班级", index:"clazz_id", type:"selectself_clazz_name",newline:true,length:3,required:"required"},
+		@			  {name:"专业", index:"majorid", type:"selectself_major_name",newline:false,length:3,required:"required"}
 		@		   ];
 		@ include("/common/_curd/_add.html", {"col":_col, "table":_table}){}
 		

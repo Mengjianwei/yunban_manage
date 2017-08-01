@@ -64,7 +64,11 @@ public class SelectTag extends Tag {
 				sql = "select num as ID,pId as PID,name as TEXT from  TFW_DICT where code=" + code + " and num>0";
 				intercept = Cst.me().getDefaultSelectFactory().dictIntercept();
 			} else if (type.equals("self")) {
-				sql = "select 3 as ID,'ddd' as TEXT from  TFW_DICT limit 3";
+				if (code.equals("major_name")) {
+					sql = "select id as ID,major_name as TEXT from  yb_major";
+				} else if (code.equals("clazz_name")) {
+					sql = "select id as ID,clazz_name as TEXT from  yb_clazz";
+				} 
 				intercept = Cst.me().getDefaultSelectFactory().dictIntercept();
 			}else if (type.equals("user")) {
 				CACHE_NAME = ConstCache.USER_CACHE;
