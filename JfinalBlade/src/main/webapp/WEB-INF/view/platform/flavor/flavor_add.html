@@ -1,0 +1,16 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/save" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="yb_flavor";
+		@ var _col=[
+		@			  {name:"名称", index:"flavor_name", type:"text",newline:true,length:5,required:"required"},
+		@			  {name:"编码", index:"flavor_code", type:"text",newline:true,length:8,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_add.html", {"col":_col, "table":_table}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"新增", btn_close:"关闭"}) {}
+	</form>
+
+@}
