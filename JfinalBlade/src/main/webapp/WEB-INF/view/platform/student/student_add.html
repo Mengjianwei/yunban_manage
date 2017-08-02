@@ -4,10 +4,9 @@
 		<!-- 表单 -->
 		@ var _table="yb_student";
 		@ var _col=[
-		@			  {name:"用户名", index:"user_name", type:"text",newline:true,length:3,required:"required"},
-		@			  {name:"密码", index:"user_password", type:"text",value:1234,newline:false,length:3,required:"required"},
-		@			  {name:"班级", index:"clazz_id", type:"selectself_clazz_name",newline:true,length:3,required:"required"},
-		@			  {name:"专业", index:"majorid", type:"selectself_major_name",newline:false,length:3,required:"required"}
+		@			  {name:"用户名", index:"user_name", type:"text",newline:true,length:5,required:"required"},
+		@			  {name:"密码", index:"user_password", type:"text",value:1234,newline:true,length:5,required:"required"},
+		@			  {name:"专业", index:"majorid", type:"selectself_major_name",newline:true,length:5,required:"required"}
 		@		   ];
 		@ include("/common/_curd/_add.html", {"col":_col, "table":_table}){}
 		

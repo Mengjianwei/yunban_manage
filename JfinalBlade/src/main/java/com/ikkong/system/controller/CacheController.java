@@ -333,10 +333,25 @@ public class CacheController extends BaseController{
 		final String num = getPara("num");
 		List<Record> dict = new ArrayList<Record>();
 		if (col.equals("major_name")) {
-			dict = Db.init().selectList("select id as ID,major_name as TEXT from  yb_major");
+			dict = Db.init().selectList("select id as ID,description as TEXT from  yb_major");
 		}else if (col.equals("clazz_name")) {
 			dict = Db.init().selectList("select id as ID,clazz_name as TEXT from  yb_clazz");
+		}else if (col.equals("mirror_name")) {
+			dict = Db.init().selectList("select id as ID,mirror_name as TEXT from  yb_mirror");
+		}else if (col.equals("net_name")) {
+			dict = Db.init().selectList("select id as ID,net_name as TEXT from  yb_net");
+		}else if (col.equals("flavor_name")) {
+			dict = Db.init().selectList("select id as ID,flavor_describe as TEXT from  yb_flavor");
+		}else if (col.equals("type_name")) {
+			dict = Db.init().selectList("select id as ID,type_name as TEXT from  yb_course_type");
+		}else if (col.equals("phase_name")) {
+			dict = Db.init().selectList("select id as ID,phase_name as TEXT from  yb_course_phase");
+		}else if (col.equals("course_name")) {
+			dict = Db.init().selectList("select id as ID,course_name as TEXT from  yb_course");
+		}else if (col.equals("doc_name")) {
+			dict = Db.init().selectList("select id as ID,doc_name as TEXT from  yb_doc");
 		}
+		
 		StringBuilder sb = new StringBuilder();
 		sb.append("<select class=\"form-control\" style=\"margin-left:-3px;cursor:pointer;\" id=\"inputs"
 				+ num + "\">");

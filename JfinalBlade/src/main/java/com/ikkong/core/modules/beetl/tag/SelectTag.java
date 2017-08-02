@@ -65,10 +65,24 @@ public class SelectTag extends Tag {
 				intercept = Cst.me().getDefaultSelectFactory().dictIntercept();
 			} else if (type.equals("self")) {
 				if (code.equals("major_name")) {
-					sql = "select id as ID,major_name as TEXT from  yb_major";
-				} else if (code.equals("clazz_name")) {
+					sql = "select id as ID,description as TEXT from  yb_major";
+				}else if (code.equals("clazz_name")) {
 					sql = "select id as ID,clazz_name as TEXT from  yb_clazz";
-				} 
+				}else if (code.equals("mirror_name")) {
+					sql = "select id as ID,mirror_name as TEXT from  yb_mirror";
+				}else if (code.equals("net_name")) {
+					sql = "select id as ID,net_name as TEXT from  yb_net";
+				}else if (code.equals("flavor_name")) {
+					sql = "select id as ID,flavor_describe as TEXT from  yb_flavor";
+				}else if (code.equals("type_name")) {
+					sql = "select id as ID,type_name as TEXT from  yb_course_type";
+				}else if (code.equals("phase_name")) {
+					sql = "select id as ID,phase_name as TEXT from  yb_course_phase";
+				}else if (code.equals("course_name")) {
+					sql = "select id as ID,course_name as TEXT from  yb_course";
+				}else if (code.equals("doc_name")) {
+					sql = "select id as ID,doc_name as TEXT from  yb_doc";
+				}
 				intercept = Cst.me().getDefaultSelectFactory().dictIntercept();
 			}else if (type.equals("user")) {
 				CACHE_NAME = ConstCache.USER_CACHE;
