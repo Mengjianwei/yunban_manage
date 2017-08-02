@@ -11,12 +11,11 @@
 
 	function initGrid(){
 		var grid_url = ctx + "/${code}/list";
-		var _colnames = ["ID", "ç”¨æˆ·å", "å¯†ç ", "ä¸“ä¸š"];
+		var _colnames = ["ID", "±àÂë", "½×¶ÎÃû³Æ", "¿Î³ÌÀàĞÍ"];
 		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
-						{name:"user_name", index:"user_name", width:100},
-						{name:"user_password", index:"user_password", width:100,hidden:true},
-						{name:"major_name", index:"majorid", width:100}];
-
+						{name:"phase_code", index:"phase_code", width:100},
+						{name:"phase_name", index:"phase_name", width:100},
+						{name:"type_name", index:"typeid", width:100}];
 		jQuery(grid_selector).jqGrid({
 			url : grid_url,
 		    shrinkToFit : true,
@@ -35,27 +34,27 @@
 </script>
 
 
-	<!-- é…ç½® grid -->
+	<!-- ÅäÖÃ grid -->
 	<div class="row">
 		<div class="col-xs-12 tb-grid">
-			<!-- é…ç½® æŸ¥è¯¢ -->
+			<!-- ÅäÖÃ ²éÑ¯ -->
 			@ var _col=[
 			@		{name:"ID", index:"id", type:"text"},
-			@		{name:"ç”¨æˆ·å", index:"user_name", type:"text"},
-			@		{name:"å¯†ç ", index:"user_password", type:"text"},
-			@		{name:"ä¸“ä¸š", index:"majorid", type:"selectself_major_name"}
+			@		{name:"±àÂë", index:"phase_code", type:"text"},
+			@		{name:"½×¶ÎÃû³Æ", index:"phase_name", type:"text"},
+			@		{name:"¿Î³ÌÀàĞÍ", index:"typeid", type:"selectself_type_name"}
 			@];
 			@ include("/common/_function/_search.html",{"col":_col}){}
-			<!-- æŒ‰é’® -->
+			<!-- °´Å¥ -->
 			<div class="welljq well-sm" id="btns"></div>
 			<!-- grid -->
 			<table id="aaaaa"></table>
-			<!-- åˆ†é¡µ-->
+			<!-- ·ÖÒ³-->
 			<div id="grid-pager"></div>
 		</div>
 	</div>
 	
-	<!-- å¼•å…¥æ‰€éœ€çš„js -->
+	<!-- ÒıÈëËùĞèµÄjs -->
 	@include("/common/_listscript.html"){}
 	
 @}	

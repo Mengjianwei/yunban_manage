@@ -1,17 +1,17 @@
 @layout("/common/_curd/_container.html"){
 
 	<form data-url="${basePath}/${code}/save" method="post" class="form-horizontal" role="form">
-		<!-- 表单 -->
+		<!-- 琛ㄥ崟 -->
+		@ var _table="yb_course_type";
 		@ var _col=[
-			@		{name:"ID", index:"id", type:"text"},
-			@		{name:"编码", index:"type_code", type:"text"},
-			@		{name:"课程", index:"type_name", type:"text"},
-			@		{name:"专业", index:"majorid", type:"selectself_major_name"}
-			@];
-			@ include("/common/_function/_search.html",{"col":_col}){}
+		@			  {name:"缂栫爜", index:"type_code",  type:"text", newline:true,length:3,required:"required"},
+		@			  {name:"璇剧▼绫诲瀷", index:"type_name",  type:"text", newline:false,length:3,required:"required"},
+		@			  {name:"涓撲笟", index:"majorid",    type:"selectself_major_name",newline:true,length:5,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_add.html", {"col":_col, "table":_table}){}
 		
-		<!-- 按钮 -->
-		@ include("/common/_curd/_btn.html", {btn_save:"新增", btn_close:"关闭"}) {}
+		<!-- 鎸夐挳-->
+		@ include("/common/_curd/_btn.html", {btn_save:"鏂板", btn_close:"鍏抽棴"}) {}
 	</form>
 
 @}
