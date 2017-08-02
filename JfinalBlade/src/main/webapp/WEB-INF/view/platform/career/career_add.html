@@ -1,0 +1,19 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/save" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="yb_career";
+		@ var _col=[
+		@			  {name:"职业名称", index:"career_name", type:"text",newline:true,length:3,required:"required"},
+		@			  {name:"编码", index:"career_code", type:"text",newline:false,length:3,required:"required"},
+		@			  {name:"课程阶段", index:"phase_id", type:"selectself_phase_name",newline:true,length:5,required:"required"},
+		@			  {name:"图片", index:"image_url", type:"imgupload",newline:true,length:5,required:"required"}
+		@			  
+		@		   ];
+		@ include("/common/_curd/_add.html", {"col":_col, "table":_table}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"新增", btn_close:"关闭"}) {}
+	</form>
+
+@}

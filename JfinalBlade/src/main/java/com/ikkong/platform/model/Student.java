@@ -22,8 +22,6 @@ public class Student extends BaseModel {
 	private String user_name;
 	// 密码
 	private String user_password;
-	// 班级
-	private String clazz_id;
 	// 专业
 	private Integer majorid;
 	
@@ -47,12 +45,7 @@ public class Student extends BaseModel {
 		this.user_password = user_password;
 	}
 	
-	public String getClazz_id() {
-		return clazz_id;
-	}
-	public void setClazz_id(String clazz_id) {
-		this.clazz_id = clazz_id;
-	}
+	
 	public Integer getMajorid() {
 		return majorid;
 	}

@@ -1,0 +1,10 @@
+
+*.log
+JfinalBlade/jblade.log
+JfinalBlade/README.md
+JfinalBlade/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+JfinalBlade/.settings/org.eclipse.core.resources.prefs
+JfinalBlade/jblade.log
+JfinalBlade/README.md
+JfinalBlade/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+JfinalBlade/target/m2e-wtp/web-resources/META-INF/maven/com.ikkong/jblade/pom.properties
