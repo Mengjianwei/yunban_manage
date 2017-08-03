@@ -6,13 +6,12 @@ import java.util.Map;
 import com.ikkong.core.aop.AopContext;
 import com.ikkong.core.dao.Blade;
 import com.ikkong.core.meta.PageIntercept;
-import com.ikkong.core.toolbox.Func;
 import com.ikkong.core.toolbox.Record;
 import com.ikkong.core.toolbox.support.BladePage;
 import com.ikkong.platform.model.Major;
 
-public class StudentIntercept extends PageIntercept {
-
+public class SectionIntercept extends PageIntercept {
+	
 	/**
 	 * 查询后附加字典项
 	 */
@@ -25,11 +24,8 @@ public class StudentIntercept extends PageIntercept {
 		for (Map<String, Object> map : list) {
 			Object majorid = map.get("majorid");
 			Major major = Blade.create(Major.class).findFirstBy("id = #{id}", Record.create().set("id", majorid));
-
-
-			map.put("major_name", major.getDescription());
-			map.put("role", Func.getDictName(904, map.get("role")));
+			map.put("major_name", major.getMajor_name());
 		}
 	}
-	
+
 }

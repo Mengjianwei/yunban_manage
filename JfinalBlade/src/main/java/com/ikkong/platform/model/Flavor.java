@@ -22,8 +22,16 @@ public class Flavor extends BaseModel {
 	private String flavor_code;
 	// 专业名
 	private String flavor_name;
+<<<<<<< HEAD
+	
 	private String flavor_describe;
 	
+
+
+=======
+	private String flavor_describe;
+	
+>>>>>>> 8cda401d6fe7aeecf6706d1e45e3e8a09f7cb919
 	
 	public String getFlavor_describe() {
 		return flavor_describe;
@@ -49,6 +57,12 @@ public class Flavor extends BaseModel {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public String getFlavor_describe() {
+		return flavor_describe;
+	}
+	public void setFlavor_describe(String flavor_describe) {
+		this.flavor_describe = flavor_describe;
 	}
 	
 	
