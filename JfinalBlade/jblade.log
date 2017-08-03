@@ -8808,3 +8808,6 @@ java.lang.NullPointerException
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
 	at java.lang.Thread.run(Thread.java:745)
+
+2017-08-03 21:17:53
+[ERROR]-[Thread: main]-[com.ikkong.core.jfinal.ext.autoroute.ClassSearcher.findjarFiles()]: file search error:E:\github\yunban_manage\JfinalBlade\src\main\webapp\WEB-INF\lib is not a dir！
