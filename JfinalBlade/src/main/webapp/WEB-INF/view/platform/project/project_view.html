@@ -1,0 +1,22 @@
+@layout("/common/_curd/_container.html"){
+
+	<form class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _col=[
+		@			{name:"项目名称", index:"project_name", type:"text",newline:true,length:3,required:"required"},
+		@			{name:"编码", index:"project_code", type:"text",newline:false,length:3,required:"required"},
+		@			{name:"类型", index:"typeid", type:"selectself_type_name",newline:true,length:3,required:"required"},
+		@			{name:"镜像", index:"mirrorid", type:"selectself_mirror_name",newline:false,length:3,required:"required"},
+		@			{name:"网络", index:"netid", type:"selectself_net_name",newline:true,length:3,required:"required"},
+		@			{name:"硬件资源", index:"flavorid", type:"selectself_flavor_name",newline:false,length:3,required:"required"},
+		@			{name:"状态", index:"status", type:"select_902",newline:true,length:3,required:"required"},
+		@			{name:"创建时间", index:"create_time", type:"laydate",newline:false,length:4,required:"required"},
+		@			{name:"图片", index:"image_url", type:"imgupload",newline:true,length:5,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_view.html", {"col":_col}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_close:"关闭"}) {}
+	</form>
+
+@}

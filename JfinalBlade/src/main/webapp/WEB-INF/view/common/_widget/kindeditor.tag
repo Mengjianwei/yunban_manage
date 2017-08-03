@@ -11,7 +11,7 @@
 					uploadJson : '${ctxPath}/kindeditor/upload_json',
 					//uploadJson : '${ctxPath}/image/upload_blob',
 					fileManagerJson : '${ctxPath}/kindeditor/file_manager_json',
-					items: ['source', '|', 'fontname', 'fontsize', '|', 'forecolor', 'bold', 'italic', 'underline', '|', 'justifyleft', 'justifycenter', 'justifyright', '|', 'image', 'multiimage', '|', 'plainpaste', 'wordpaste', '|','fullscreen'],
+					items: ['source', '|', 'fontname', 'fontsize', '|', 'forecolor', 'bold', 'italic', 'underline', '|', 'justifyleft', 'justifycenter', 'justifyright', '|', 'insertfile','|','image', 'multiimage', '|', 'plainpaste', 'wordpaste', '|','fullscreen'],
 					allowFileManager : true,
 					readonlyMode : ${readOnly!false},
 					afterFocus:function(){

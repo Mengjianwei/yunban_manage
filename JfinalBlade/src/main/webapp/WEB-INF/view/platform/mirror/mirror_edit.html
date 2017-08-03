@@ -6,7 +6,7 @@
 		@ var _key="id";
 		@ var _col=[
 		@			  {name:"镜像名称", index:"mirror_name", type:"text",newline:true,length:5,required:"required"},
-		@			  {name:"编码", index:"mirror_code", type:"text",newline:true,length:8,required:"required"}
+		@			  {name:"编码", index:"mirror_code", type:"text",newline:true,length:8,required:"required",disabled:"disabled"}
 		@		   ];
 		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
 		

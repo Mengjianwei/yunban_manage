@@ -1,4 +1,4 @@
-		<div class="form-group" style="display:${display!'block'}">
+<div class="form-group" style="display:${display!'block'}">
 			<div class="col-sm-10" id="_${x.index!}_BTN">
 				<label class="control-label no-padding-right" id="${x.index!}_upload" style="cursor:pointer;"><i class="fa fa-cloud-upload"></i>&nbsp;选择附件</label>			
 				<input type="hidden" id="_${x.index!}" data-type="fileupload" name="${table!x.table}.${x.index!}"  value=""  class="form-control"/>
@@ -51,7 +51,7 @@
 			});
 			
 			
-			function _${x.index!}_initFileUpload(ids, type){
+			function initFileUpload(ids, type){
 				$.ajax({
 			        type: "post",
 			        url: "${basePath}/kindeditor/initfile",

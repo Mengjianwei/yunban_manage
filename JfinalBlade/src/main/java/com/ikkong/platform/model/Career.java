@@ -24,7 +24,7 @@ public class Career extends BaseModel {
 	private String career_name;
 	
 	private String image_url;
-	private String phase_id;
+	private String phaseid;
 
 
 	
@@ -46,11 +46,11 @@ public class Career extends BaseModel {
 	public void setImage_url(String image_url) {
 		this.image_url = image_url;
 	}
-	public String getPhase_id() {
-		return phase_id;
+	public String getPhaseid() {
+		return phaseid;
 	}
-	public void setPhase_id(String phase_id) {
-		this.phase_id = phase_id;
+	public void setPhaseid(String phase_id) {
+		this.phaseid = phase_id;
 	}
 	@AutoID
 	public Integer getId() {

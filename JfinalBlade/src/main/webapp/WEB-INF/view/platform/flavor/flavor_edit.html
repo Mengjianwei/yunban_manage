@@ -6,7 +6,8 @@
 		@ var _key="id";
 		@ var _col=[
 		@			  {name:"名称", index:"flavor_name", type:"text",newline:true,length:5,required:"required"},
-		@			  {name:"编码", index:"flavor_code", type:"text",newline:true,length:8,required:"required"}
+		@			  {name:"编码", index:"flavor_code", type:"text",newline:true,length:8,required:"required",disabled:"disabled"},
+		@			  {name:"描述", index:"flavor_describe", type:"text",newline:true,length:8,required:"required"}
 		@		   ];
 		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
 		

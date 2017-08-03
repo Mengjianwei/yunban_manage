@@ -11,9 +11,10 @@
 
 	function initGrid(){
 		var grid_url = ctx + "/${code}/list";
-		var _colnames = ["ID", "名称", "编码"];
+		var _colnames = ["ID", "名称", "描述", "编码"];
 		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
 						{name:"flavor_name", index:"flavor_name", width:100},
+						{name:"flavor_describe", index:"flavor_describe", width:100},
 						{name:"flavor_code", index:"flavor_code", width:100}];
 
 		jQuery(grid_selector).jqGrid({

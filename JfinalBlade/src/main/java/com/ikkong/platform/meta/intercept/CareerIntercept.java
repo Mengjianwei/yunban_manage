@@ -23,7 +23,7 @@ public class CareerIntercept extends PageIntercept {
 		BladePage<Map<String, Object>> page = (BladePage<Map<String, Object>>) ac.getObject();
 		List<Map<String, Object>> list = page.getRows();
 		for (Map<String, Object> map : list) {
-			Object id = map.get("phase_id");
+			Object id = map.get("phaseid");
 			Phase phase = Blade.create(Phase.class).findFirstBy("id = #{id}", Record.create().set("id", id));
 			map.put("phase_name", phase.getPhase_name());
 		}

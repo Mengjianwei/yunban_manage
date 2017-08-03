@@ -1,8 +1,8 @@
 	<div class="space-4"></div>
 	
-			<!-- 鍒ゆ柇琛ㄥ崟鏄惁鍙戠敓杩囨洿鏀圭殑token -->
+			<!-- 判断表单是否发生过更改的token -->
 			<input type="hidden" id="form_token" value="1"/>
-			<!-- 涔愯閿佹帶鍒� -->
+			<!-- 乐观锁控制 -->
 			<input type="hidden" id="_${version!'version'}" name="${table!}.${version!'version'}" value="">
 			
 			@if(isEmpty(keys)){
@@ -30,7 +30,7 @@
 					</div>
 			 @ }else{
 				@	var display = (func.like(x.type,"hidden")) ? "none" : "block";
-				@   var placeholder = (!isEmpty(x.placeholder)) ? x.placeholder : ("鏆傛棤"+x.name);
+				@   var placeholder = (!isEmpty(x.placeholder)) ? x.placeholder : ("暂无"+x.name);
 				@	if(x.newline){
 						<div class="form-group" style="display:${display!}">
 				@	}
@@ -51,10 +51,6 @@
 				@			else if(x.type=="image"){
 								<img id="_${x.index!}" data-type="image" data-auto="${x.auto!}" style="padding:2px; border:1px solid #ccc;cursor:pointer;width:${x.width!'168px'};height:${x.height!'110px'};" name="${table!x.table}.${x.index!}" src="${x.src!}"></img>
 				@			}
-				@			else if(func.like(x.type,"selectself_")){
-				@                var num=strutil.replace(x.type,"selectself_","");
-								<blade:select code="${num}" name="${table!x.table}.${x.index!}" value="${x.value!0}" type="self" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>
-				@			} 
 				@			else if(func.like(x.type,"select_")){
 				@                var num=strutil.replace(x.type,"select_","");
 								<blade:select code="${num}" name="${table!x.table}.${x.index!}" value="${x.value!0}" type="dict" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>
@@ -140,7 +136,7 @@
 				var _model = ${model!"'error'"};
 				var _keys = switchBeetl();
 				if(_model == "error"){
-					layer_alert("璇诲彇鏁版嵁澶辫触!", "error");
+					layer_alert("读取数据失败!", "error");
 					return;
 				}
 				for(var x in _model){
@@ -187,12 +183,12 @@
 					else if($x.is("span")){
 						var _x = _model[x];
 						if(_x == null || _x == ""){
-							_x = "璇烽�夋嫨";
+							_x = "请选择";
 						}
 						$x.html(_x);
 					}
 					else if(_model[x]!=null && $x.is("div") && $x.attr("class").indexOf("edui")>0){
-						//閫傞厤ueditor
+						//适配ueditor
 						editor.setContent(_model[x]);
 					}
 					else if(_model[x] != null && $x.attr("type")!="autohidden"){
@@ -207,7 +203,7 @@
 				
 			});
 				
-			//beetljson杞琷son鏍煎紡
+			//beetljson转json格式
 			function switchBeetl(){
 				var _keys=${keyList!"'true'"};
 				if(_keys=="true"){

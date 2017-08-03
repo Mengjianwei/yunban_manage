@@ -25,6 +25,8 @@ public class Student extends BaseModel {
 	// 专业
 	private Integer majorid;
 	
+	private Integer role;
+	
 	@AutoID
 	public Integer getId() {
 		return id;
@@ -46,6 +48,12 @@ public class Student extends BaseModel {
 	}
 	
 	
+	public Integer getRole() {
+		return role;
+	}
+	public void setRole(Integer role) {
+		this.role = role;
+	}
 	public Integer getMajorid() {
 		return majorid;
 	}
