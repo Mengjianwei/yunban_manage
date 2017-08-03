@@ -47,7 +47,7 @@ public class CourseTypeController extends UrlPermissController {
 
 	public void list() {
 		//因为有下拉框，需要将数字转换成文字，所以需要拦截器
-		Object grid = paginate(LIST_SOURCE,new CourseTypeIntercept());
+		Object grid = paginate(LIST_SOURCE);
 		renderJson(grid);
 	}
 
