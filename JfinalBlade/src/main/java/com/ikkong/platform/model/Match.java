@@ -27,7 +27,7 @@ public class Match extends BaseModel {
 	private Integer flavorid;
 	private String image_url;
 	private Date create_time;
-	private String status;
+	private Integer status;
 	private String description;
 	
 	@AutoID
@@ -67,10 +67,11 @@ public class Match extends BaseModel {
 	public void setCreate_time(Date create_time) {
 		this.create_time = create_time;
 	}
-	public String getStatus() {
+	
+	public Integer getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 	public String getMatch_name() {

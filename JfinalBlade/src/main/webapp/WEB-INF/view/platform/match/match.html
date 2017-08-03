@@ -1,0 +1,67 @@
+@layout("/common/_curd/_container.html"){
+<script type="text/javascript">
+	var ctx = "${basePath}";
+	var grid_selector = "#aaaaa";
+	var pager_selector = "#grid-pager";
+
+	$(function(){
+		initGrid();
+		initMenuBtn("btns", "${code}");
+	});
+
+	function initGrid(){
+		var grid_url = ctx + "/${code}/list";
+		var _colnames = ["ID", "竞赛名称", "镜像","网络","硬件配置","状态","创建时间"];
+		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
+						{name:"match_name", index:"project_name", width:100},
+						{name:"mirror_name", index:"mirrorid", width:100},
+						{name:"net_name", index:"netid", width:100},
+						{name:"flavor_name", index:"flavorid", width:100},
+						{name:"status", index:"status", width:100},
+						{name:"create_time", index:"create_time", width:100}];
+
+		jQuery(grid_selector).jqGrid({
+			url : grid_url,
+		    shrinkToFit : true,
+			colNames : _colnames,
+			colModel : _colmodel,
+			jsonReader : {id :"id"},
+			pager : pager_selector,
+			ondblClickRow : page_view,
+			postData : {sort : "id", order : "desc"}
+		});
+	}
+
+	function page_view(){
+		$("#${code}_view").click();
+	}
+</script>
+
+
+	<!-- 配置 grid -->
+	<div class="row">
+		<div class="col-xs-12 tb-grid">
+			<!-- 配置 查询 -->
+			@ var _col=[
+			@		{name:"ID", index:"id", type:"text"},
+			@		{name:"竞赛名称", index:"match_name", type:"text"},
+			@		{name:"镜像", index:"mirrorid", type:"selectself_mirror_name"},
+			@		{name:"网络", index:"netid", type:"selectself_net_name"},
+			@		{name:"硬件资源", index:"flavorid", type:"selectself_flavor_name"},
+			@		{name:"状态", index:"status", type:"select_902"},
+			@		{name:"创建时间", index:"create_time", type:"date"}
+			@];
+			@ include("/common/_function/_search.html",{"col":_col}){}
+			<!-- 按钮 -->
+			<div class="welljq well-sm" id="btns"></div>
+			<!-- grid -->
+			<table id="aaaaa"></table>
+			<!-- 分页-->
+			<div id="grid-pager"></div>
+		</div>
+	</div>
+	
+	<!-- 引入所需的js -->
+	@include("/common/_listscript.html"){}
+	
+@}	

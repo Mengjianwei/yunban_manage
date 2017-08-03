@@ -1,0 +1,24 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/update" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="yb_match";
+		@ var _key="id";
+		@ var _col=[
+		@			{name:"竞赛名称", index:"match_name", type:"text",newline:true,length:3,required:"required"},
+		@			{name:"编码", index:"match_code", type:"text",newline:false,length:3,required:"required"},
+		@			{name:"镜像", index:"mirrorid", type:"selectself_mirror_name",newline:true,length:3,required:"required"},
+		@			{name:"网络", index:"netid", type:"selectself_net_name",newline:false,length:3,required:"required"},
+		@			{name:"硬件资源", index:"flavorid", type:"selectself_flavor_name",newline:true,length:3,required:"required"},
+		@			{name:"状态", index:"status", type:"select_902",newline:false,length:3,required:"required"},
+		@			{name:"创建时间", index:"create_time", type:"laydate",newline:true,length:5,required:"required"},
+		@			{name:"图片", index:"image_url", type:"imgupload",newline:true,length:5,required:"required"},
+		@			{name:"描述", index:"description", type:"ueditor",newline:true,length:8,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"修改", btn_close:"关闭"}) {}
+	</form>
+
+@}
