@@ -25,6 +25,8 @@ public class Major extends BaseModel {
 	
 	private String grade_name;
 	private String class_name;
+	private String typeid;
+	private String description;
 	public String getGrade_name() {
 		return grade_name;
 	}
@@ -43,9 +45,13 @@ public class Major extends BaseModel {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	private String description;
-
 	
+	public String getTypeid() {
+		return typeid;
+	}
+	public void setTypeid(String typeid) {
+		this.typeid = typeid;
+	}
 	@AutoID
 	public Integer getId() {
 		return id;

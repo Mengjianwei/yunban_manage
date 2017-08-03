@@ -2,6 +2,7 @@ package com.ikkong.platform.controller;
 
 import com.ikkong.core.jfinal.ext.kit.JsonKit;
 import com.ikkong.platform.meta.intercept.BlogIntercept;
+import com.ikkong.platform.meta.intercept.MajorIntercept;
 import com.ikkong.platform.meta.intercept.StudentIntercept;
 import com.ikkong.platform.model.Blog;
 import com.ikkong.platform.model.Major;
@@ -60,7 +61,7 @@ public class MajorController extends UrlPermissController {
 	}
 
 	public void list() {
-		Object grid = paginate(LIST_SOURCE);
+		Object grid = paginate(LIST_SOURCE,new MajorIntercept());
 		renderJson(grid);
 	}
 
