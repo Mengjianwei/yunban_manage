@@ -1,1 +1,18 @@
 
+<<<<<<< HEAD
+=======
+*.log
+JfinalBlade/jblade.log
+JfinalBlade/README.md
+JfinalBlade/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+JfinalBlade/.settings/org.eclipse.core.resources.prefs
+JfinalBlade/jblade.log
+<<<<<<< HEAD
+JfinalBlade/README.md
+JfinalBlade/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+=======
+*.prefs
+*.log
+>>>>>>> 8cda401d6fe7aeecf6706d1e45e3e8a09f7cb919
+JfinalBlade/target/m2e-wtp/web-resources/META-INF/maven/com.ikkong/jblade/pom.properties
+>>>>>>> 8dc856ce4cf71a316e075dfbefc63d2b2275711b
