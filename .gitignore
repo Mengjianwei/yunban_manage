@@ -8,3 +8,4 @@ JfinalBlade/jblade.log
 *.prefs
 *.log
 JfinalBlade/target/m2e-wtp/web-resources/META-INF/maven/com.ikkong/jblade/pom.properties
+*.log
