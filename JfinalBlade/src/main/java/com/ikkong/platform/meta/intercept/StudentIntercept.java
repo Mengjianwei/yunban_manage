@@ -25,6 +25,8 @@ public class StudentIntercept extends PageIntercept {
 		for (Map<String, Object> map : list) {
 			Object majorid = map.get("majorid");
 			Major major = Blade.create(Major.class).findFirstBy("id = #{id}", Record.create().set("id", majorid));
+
+
 			map.put("major_name", major.getDescription());
 			map.put("role", Func.getDictName(904, map.get("role")));
 		}

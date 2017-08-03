@@ -1,0 +1,60 @@
+@layout("/common/_curd/_container.html"){
+<script type="text/javascript">
+	var ctx = "${basePath}";
+	var grid_selector = "#aaaaa";
+	var pager_selector = "#grid-pager";
+
+	$(function(){
+		initGrid();
+		initMenuBtn("btns", "${code}");
+	});
+
+	function initGrid(){
+		var grid_url = ctx + "/${code}/list";
+		var _colnames = ["ID", "编码", "阶段名称", "课程类型"];
+		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
+						{name:"phase_code", index:"phase_code", width:100},
+						{name:"phase_name", index:"phase_name", width:100},
+						{name:"type_name", index:"typeid", width:100}];
+		jQuery(grid_selector).jqGrid({
+			url : grid_url,
+		    shrinkToFit : true,
+			colNames : _colnames,
+			colModel : _colmodel,
+			jsonReader : {id :"id"},
+			pager : pager_selector,
+			ondblClickRow : page_view,
+			postData : {sort : "id", order : "desc"}
+		});
+	}
+
+	function page_view(){
+		$("#${code}_view").click();
+	}
+</script>
+
+
+	<!-- ���� grid -->
+	<div class="row">
+		<div class="col-xs-12 tb-grid">
+			<!-- ���� ��ѯ -->
+			@ var _col=[
+			@		{name:"ID", index:"id", type:"text"},
+			@		{name:"编码", index:"phase_code", type:"text"},
+			@		{name:"阶段名称", index:"phase_name", type:"text"},
+			@		{name:"课程类型", index:"typeid", type:"selectself_type_name"}
+			@];
+			@ include("/common/_function/_search.html",{"col":_col}){}
+			<!-- ��ť -->
+			<div class="welljq well-sm" id="btns"></div>
+			<!-- grid -->
+			<table id="aaaaa"></table>
+			<!-- ��ҳ-->
+			<div id="grid-pager"></div>
+		</div>
+	</div>
+	
+	<!-- ���������js -->
+	@include("/common/_listscript.html"){}
+	
+@}	
