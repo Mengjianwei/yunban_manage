@@ -1,0 +1,3 @@
+切片左侧菜单栏：superset\assets\javascripts\explore\stores\visTypes.js
+点击Query按键：superset\assets\javascripts\explore\actions\exploreActions.js 调用 superset\assets\javascripts\explore\exploreUtils.js
+请求：superset/view/core.py中的/explore_json
