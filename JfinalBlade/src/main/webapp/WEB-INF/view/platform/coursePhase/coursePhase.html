@@ -11,7 +11,7 @@
 
 	function initGrid(){
 		var grid_url = ctx + "/${code}/list";
-		var _colnames = ["ID", "±àÂë", "½×¶ÎÃû³Æ", "¿Î³ÌÀàĞÍ"];
+		var _colnames = ["ID", "ç¼–ç ", "é˜¶æ®µåç§°", "è¯¾ç¨‹ç±»å‹"];
 		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
 						{name:"phase_code", index:"phase_code", width:100},
 						{name:"phase_name", index:"phase_name", width:100},
@@ -34,27 +34,27 @@
 </script>
 
 
-	<!-- ÅäÖÃ grid -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ grid -->
 	<div class="row">
 		<div class="col-xs-12 tb-grid">
-			<!-- ÅäÖÃ ²éÑ¯ -->
+			<!-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ñ¯ -->
 			@ var _col=[
 			@		{name:"ID", index:"id", type:"text"},
-			@		{name:"±àÂë", index:"phase_code", type:"text"},
-			@		{name:"½×¶ÎÃû³Æ", index:"phase_name", type:"text"},
-			@		{name:"¿Î³ÌÀàĞÍ", index:"typeid", type:"selectself_type_name"}
+			@		{name:"ç¼–ç ", index:"phase_code", type:"text"},
+			@		{name:"é˜¶æ®µåç§°", index:"phase_name", type:"text"},
+			@		{name:"è¯¾ç¨‹ç±»å‹", index:"typeid", type:"selectself_type_name"}
 			@];
 			@ include("/common/_function/_search.html",{"col":_col}){}
-			<!-- °´Å¥ -->
+			<!-- ï¿½ï¿½Å¥ -->
 			<div class="welljq well-sm" id="btns"></div>
 			<!-- grid -->
 			<table id="aaaaa"></table>
-			<!-- ·ÖÒ³-->
+			<!-- ï¿½ï¿½Ò³-->
 			<div id="grid-pager"></div>
 		</div>
 	</div>
 	
-	<!-- ÒıÈëËùĞèµÄjs -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½js -->
 	@include("/common/_listscript.html"){}
 	
 @}	

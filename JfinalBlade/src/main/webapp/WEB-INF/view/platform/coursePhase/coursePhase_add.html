@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+@layout("/common/_curd/_container.html"){
 
-</body>
-</html>
+	<form data-url="${basePath}/${code}/save" method="post" class="form-horizontal" role="form">
+		<!-- 表单-->
+		@ var _table="yb_course_phase";
+		@ var _col=[
+		@			  {name:"编码", index:"phase_code",  type:"text", newline:true,length:3,required:"required"},
+		@			  {name:"阶段名称", index:"phase_name",  type:"text", newline:false,length:3,required:"required"},
+		@			  {name:"课程类型", index:"typeid",    type:"selectself_type_name",newline:true,length:5,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_add.html", {"col":_col, "table":_table}){}
+		
+		<!-- 按钮-->
+		@ include("/common/_curd/_btn.html", {btn_save:"新增", btn_close:"关闭"}) {}
+	</form>
+
+@}
