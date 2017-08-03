@@ -25,7 +25,6 @@ public class CourseController extends UrlPermissController {
 	}
 
 	public void add() {
-		System.out.println("99999999999999999999999999999999999999999999999999999999999");
 		setAttr("code", CODE);
 		render(BASE_PATH + "course_add.html");
 	}
