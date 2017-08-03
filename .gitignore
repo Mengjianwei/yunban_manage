@@ -10,3 +10,11 @@ JfinalBlade/jblade.log
 JfinalBlade/target/m2e-wtp/web-resources/META-INF/maven/com.ikkong/jblade/pom.properties
 *.log
 JfinalBlade/.classpath
+*.properties
+*.log
+JfinalBlade/src/main/java/com/ikkong/platform/model/Flavor.java
+JfinalBlade/target/classes/com/ikkong/platform/meta/intercept/StudentIntercept.class
+*.MF
+JfinalBlade/.classpath
+*.prefs
+*.properties
