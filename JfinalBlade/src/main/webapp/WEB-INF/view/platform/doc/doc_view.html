@@ -1,0 +1,16 @@
+@layout("/common/_curd/_container.html"){
+
+	<form class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _col=[
+		@			  {name:"编码", index:"doc_code", type:"text", newline:true,length:5,required:"required"},
+		@			  {name:"文档名称", index:"doc_name", type:"text", newline:true,length:5,required:"required"},
+		@			  {name:"文本内容", index:"doc_info", type:"test",newline:true,length:5,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_view.html", {"col":_col}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_close:"关闭"}) {}
+	</form>
+
+@}

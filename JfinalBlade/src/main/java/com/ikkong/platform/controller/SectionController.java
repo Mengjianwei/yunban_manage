@@ -11,7 +11,7 @@ public class SectionController extends UrlPermissController {
 	
 	
 	private static String CODE = "section";
-	private static String PERFIX = "yb_course_phase";
+	private static String PERFIX = "yb_section";
 	private static String LIST_SOURCE = "Section.list";
 	private static String BASE_PATH = "/platform/section/";
 	

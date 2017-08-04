@@ -8,7 +8,7 @@
 			@		{name:"课程名称", index:"course_name",type:"text",newline:false,length:3,required:"required"},
 			@		{name:"阶段类型", index:"phaseid",type:"selectself_phase_name",newline:true,length:5,required:"required"},
 			@		{name:"镜像", index:"mirrorid",type:"selectself_mirror_name",newline:false,length:5,required:"required"},
-			@		{name:"课程描述", index:"description",type:"text",newline:false,length:3,required:"required"},
+			@		{name:"课程描述", index:"description",type:"ueditor",newline:true,length:3,required:"required"},
 			@		{name:"状态", index:"status",type:"select_902",newline:true,length:3,required:"required",table:"yb_course"},
 			@		{name:"创建时间", index:"create_time",type:"laydate",value:func.getTime(),newline:true,length:8,required:"required"},
 			@		{name:"网络", index:"netid",type:"selectself_net_name",newline:true,length:5,required:"required"},

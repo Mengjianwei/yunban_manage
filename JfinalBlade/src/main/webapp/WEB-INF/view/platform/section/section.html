@@ -1,0 +1,67 @@
+@layout("/common/_curd/_container.html"){
+<script type="text/javascript">
+	var ctx = "${basePath}";
+	var grid_selector = "#aaaaa";
+	var pager_selector = "#grid-pager";
+
+	$(function(){
+		initGrid();
+		initMenuBtn("btns", "${code}");
+	});
+
+	function initGrid(){
+		var grid_url = ctx + "/${code}/list";
+		var _colnames = ["ID", "编码", "章节名称", "课程名称","文档名称","章节描述","创建时间"];
+		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
+						{name:"section_code", index:"section_code", width:100},
+						{name:"section_name", index:"section_name", width:100},
+						{name:"course_name", index:"courseid", width:100},
+						{name:"doc_name", index:"docid", width:100},
+						{name:"section_describe", index:"section_describe", width:100},
+						{name:"create_time", index:"create_time", width:100}
+						];
+		jQuery(grid_selector).jqGrid({
+			url : grid_url,
+		    shrinkToFit : true,
+			colNames : _colnames,
+			colModel : _colmodel,
+			jsonReader : {id :"id"},
+			pager : pager_selector,
+			ondblClickRow : page_view,
+			postData : {sort : "id", order : "desc"}
+		});
+	}
+
+	function page_view(){
+		$("#${code}_view").click();
+	}
+</script>
+
+
+	<!-- 配置 grid -->
+	<div class="row">
+		<div class="col-xs-12 tb-grid">
+			<!-- 配置 查询 -->
+			@ var _col=[
+			@		{name:"ID", index:"id", type:"text"},
+			@		{name:"编码", index:"section_code", type:"text"},
+			@		{name:"章节名称", index:"section_name", type:"text"},
+			@		{name:"课程名称", index:"courseid", type:"selectself_course_name"},
+			@		{name:"文档名称", index:"docid", type:"selectself_doc_name"},
+			@		{name:"章节描述", index:"section_describe", type:"text"},
+			@		{name:"创建时间", index:"create_time", type:"date"}
+			@           ];
+			@ include("/common/_function/_search.html",{"col":_col}){}
+			<!-- 按钮 -->
+			<div class="welljq well-sm" id="btns"></div>
+			<!-- grid -->
+			<table id="aaaaa"></table>
+			<!-- 分页-->
+			<div id="grid-pager"></div>
+		</div>
+	</div>
+	
+	<!-- 引入所需的js -->
+	@include("/common/_listscript.html"){}
+	
+@}	
