@@ -20,5 +20,7 @@ public interface ConstCache {
 	final static String DIY_CACHE = "diyCache";
 	
 	final static String SYS_CACHE = "sysCache";
+	
+	final static String COURSE_TREE_CACHE = "cosCache";
 
 }
