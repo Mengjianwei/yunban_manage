@@ -11244,3 +11244,9 @@ java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Stri
 
 2017-08-07 14:30:03
 [WARN]-[Thread: qtp838499263-27]-[com.jfinal.plugin.ehcache.CacheKit.getOrAddCache()]: Could not find cache config [cosCache], using default.
+
+2017-08-07 14:53:44
+[ERROR]-[Thread: main]-[com.ikkong.core.jfinal.ext.autoroute.ClassSearcher.findjarFiles()]: file search error:E:\github\yunban_manage\JfinalBlade\src\main\webapp\WEB-INF\lib is not a dir！
+
+2017-08-07 14:54:07
+[WARN]-[Thread: qtp838499263-31]-[com.jfinal.plugin.ehcache.CacheKit.getOrAddCache()]: Could not find cache config [cosCache], using default.
