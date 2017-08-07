@@ -12,4 +12,5 @@ import com.ikkong.platform.model.Student;
  */
 public interface CareerService extends IService<Career>{
 
+	boolean saveRelation(String ids, String careerid);
 }

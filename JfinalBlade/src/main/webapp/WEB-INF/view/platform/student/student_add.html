@@ -4,23 +4,10 @@
 		<!-- 表单 -->
 		@ var _table="yb_student";
 		@ var _col=[
-<<<<<<< HEAD
-		@			  {name:"用户名", index:"user_name", type:"text",newline:true,length:3,required:"required"},
-		@			  {name:"密码", index:"user_password", type:"text",value:1234,newline:false,length:3,required:"required"},
-=======
 		@			  {name:"用户名", index:"user_name", type:"text",newline:true,length:5,required:"required"},
 		@			  {name:"密码", index:"user_password", type:"text",value:1234,newline:true,length:5,required:"required"},
-<<<<<<< HEAD
->>>>>>> 3b22196052902353de7c7b9b62ec76500edda88d
-		@			  {name:"专业", index:"majorid", type:"selectself_major_name",newline:true,length:5,required:"required"}
-=======
 		@			  {name:"专业", index:"majorid", type:"selectself_major_name",newline:true,length:5,required:"required"},
-<<<<<<< HEAD
 		@			  {name:"角色", index:"role", type:"select_904",value:1,newline:true,length:5,required:"required"}
-=======
-		@			  {name:"角色", index:"role", type:"select_904",newline:true,length:5,required:"required"}
->>>>>>> 8cda401d6fe7aeecf6706d1e45e3e8a09f7cb919
->>>>>>> 8dc856ce4cf71a316e075dfbefc63d2b2275711b
 		@		   ];
 		@ include("/common/_curd/_add.html", {"col":_col, "table":_table}){}
 		

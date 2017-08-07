@@ -1,96 +1,20 @@
 @layout("/common/_container.html"){
 
-		<div class="row" style="padding:10px 16px 10px 16px;">
-			<div class="col-xs-12">
-				<!-- PAGE CONTENT BEGINS -->
-				<div class="alert alert-block alert-success">
-					<button type="button" class="close" data-dismiss="alert">
-						<i class="ace-icon fa fa-times"></i>
-					</button>
-
-					<i class="ace-icon fa fa-check green"></i>
-					娆㈣繋浣跨敤
-					<strong class="green">
-						JFinal Blade 浼佷笟绾у紑鍙戝钩鍙�
-						<small>(v1.0)</small>
-					</strong>,
-					浠ヤ笅涓哄揩閫熷湴鍧�鍚�
-				</div>
-				
-				<div class="alert alert-block alert-success">
-					<button type="button" class="close" data-dismiss="alert">
-						<i class="ace-icon fa fa-times"></i>
-					</button>
-
-					<i class="ace-icon fa fa-check green"></i>
-					浣跨敤鎶�湳:
-					<strong class="green">
-						JFinal + Beetl + Ehcache + Shiro + BootStrap
-					</strong>
-				</div>
-				
-				<div class="alert alert-block alert-success">
-					<button type="button" class="close" data-dismiss="alert">
-						<i class="ace-icon fa fa-times"></i>
-					</button>
-
-					<i class="ace-icon fa fa-check green"></i>
-					ECharts鑼冧緥瀹樼綉
-					<strong class="green">
-						<a class="green" href="http://echarts.baidu.com/examples.html" target="_blank">http://echarts.baidu.com/examples.html</a>
-					</strong>
-				</div>
-				
-				<div class="alert alert-block alert-success">
-					<button type="button" class="close" data-dismiss="alert">
-						<i class="ace-icon fa fa-times"></i>
-					</button>
-
-					<i class="ace-icon fa fa-check green"></i>
-					Beetl鍦ㄧ嚎缂栫爜甯姪
-					<strong>
-						<a class="green" href="http://ibeetl.com:8080/beetlonline/" target="_blank">http://ibeetl.com:8080/beetlonline/</a>
-					</strong>
-				</div>
-				
-				<div class="alert alert-block alert-success">
-					<button type="button" class="close" data-dismiss="alert">
-						<i class="ace-icon fa fa-times"></i>
-					</button>
-
-					<i class="ace-icon fa fa-check green"></i>
-					BeetlSql鏂囨。
-					<strong>
-						<a class="green" href="http://ibeetl.com/guide/beetlsql.html" target="_blank">http://ibeetl.com/guide/beetlsql.html</a>
-					</strong>
-				</div>
-				
-				<div class="alert alert-block alert-success">
-					<button type="button" class="close" data-dismiss="alert">
-						<i class="ace-icon fa fa-times"></i>
-					</button>
-
-					<i class="ace-icon fa fa-check green"></i>
-					BootStrap鍦ㄧ嚎甯姪
-					<strong>
-						<a class="green" href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank">http://www.runoob.com/bootstrap/bootstrap-tutorial.html</a>
-					</strong>
-				</div>
-				
-				<div class="alert alert-block alert-success">
-					<button type="button" class="close" data-dismiss="alert">
-						<i class="ace-icon fa fa-times"></i>
-					</button>
-
-					<i class="ace-icon fa fa-check green"></i>
-					BootStrap鍥炬爣閫夋嫨
-					<strong>
-						<a class="green" href="http://fontawesome.io/icons/" target="_blank">http://fontawesome.io/icons/</a>
-					</strong>
-				</div>
-				
-			
+			<div class="col-xs-6" >
+				<div id="index-bar-1" style="height: 345px;height: 300px;"></div>
 			</div>
-	  </div>
-	  
+			<div class="col-xs-6" >
+				<div id="radar-1" style="height: 345px;height: 300px;"></div>
+			</div>
+
+			
+			<div class="col-xs-6" style="margin-top:30px">
+				<div id="flow-1" style="height: 345px;height: 300px;"></div>
+			</div>
+			<div class="col-xs-6" style="margin-top:30px">
+				<div id="index-pie-1" style="height: 345px;height: 300px;"></div>
+			</div>
+	  	
+	 	<script type="text/javascript" src="${basePath}/static/charts/echarts.min.js" ></script>
+		<script type="text/javascript" src="${basePath}/static/charts/indexChart.js" ></script>
 @}	

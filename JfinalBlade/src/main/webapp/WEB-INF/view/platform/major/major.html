@@ -11,10 +11,9 @@
 
 	function initGrid(){
 		var grid_url = ctx + "/${code}/list";
-		var _colnames = ["ID", "专业名称", "实验类型", "年级" ,"班级"];
+		var _colnames = ["ID", "专业名称", "年级" ,"班级"];
 		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
 						{name:"major_name", index:"major_name", width:100},
-						{name:"type_name", index:"typeid", width:100},
 						{name:"grade_name", index:"grade_name", width:100},
 						{name:"class_name", index:"class_name", width:100}];
 
@@ -43,7 +42,6 @@
 			@ var _col=[
 			@		{name:"ID", index:"id", type:"text"},
 			@	    {name:"专业名称", index:"major_name", type:"text"},
-			@		{name:"实验类型", index:"typeid", type:"selectself_type_name"},
 			@		{name:"年级", index:"grade_name", type:"text"},
 			@		{name:"班级", index:"class_name", type:"text"}
 			@];

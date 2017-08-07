@@ -330,6 +330,69 @@ public class CacheController extends BaseController{
 		renderJson(json(costree));
 	}
 	
+	public void cosTreeListByMajorId() {
+		final String majorid = getPara("majorid", "0");
+		List<Map<String, Object>> menu = CacheKit.get(COURSE_TREE_CACHE, "tree_course_" + majorid,
+				new IDataLoader() {
+					public Object load() {
+						String table = "yb_course_tree";
+						String pid = "";
+						List<Record> record = Db.init().selectList("select id from yb_major where id in (" + majorid + ")"); 
+						for (Map<String, Object> p : record) {
+							if (!Func.isEmpty(p.get("pid"))) {
+								pid += p.get("id").toString() + ",";
+							}
+						}
+						if (!Func.isEmpty(pid)) {
+							pid = JStrKit.removeSuffix(pid, ",");
+							table = "(select * from yb_course_tree where id in( select costreeid from yb_major_relation where majorid in ("
+									+ pid + ") ))";
+						}
+						StringBuilder sb = new StringBuilder();
+						sb.append("select m.id \"id\",(select id from yb_course_tree  where id=m.pid) \"pId\",name \"name\",(case when (m.pid=0 or m.pid is null) then 'true' else 'false' end) \"open\",(case when r.costreeid is not null then 'true' else 'false' end) \"checked\"");
+						sb.append(" from ");
+						sb.append(table);
+						sb.append(" m left join (select costreeid from yb_major_relation where majorid in ("
+								+ majorid
+								+ ") GROUP BY costreeid) r on m.id=r.costreeid order by m.level,m.num asc");
+						return Db.init().selectList(sb.toString());
+					}
+				});
+
+		renderJson(json(menu));
+	}
+	
+	public void cosTreeListByCareerId() {
+		final String careerid = getPara("careerid", "0");
+		List<Map<String, Object>> menu = CacheKit.get(COURSE_TREE_CACHE, "tree_course_" + careerid,
+				new IDataLoader() {
+					public Object load() {
+						String table = "yb_course_tree";
+						String pid = "";
+						List<Record> record = Db.init().selectList("select id from yb_career where id in (" + careerid + ")"); 
+						for (Map<String, Object> p : record) {
+							if (!Func.isEmpty(p.get("pid"))) {
+								pid += p.get("id").toString() + ",";
+							}
+						}
+						if (!Func.isEmpty(pid)) {
+							pid = JStrKit.removeSuffix(pid, ",");
+							table = "(select * from yb_course_tree where id in( select costreeid from yb_career_relation where careerid in ("
+									+ pid + ") ))";
+						}
+						StringBuilder sb = new StringBuilder();
+						sb.append("select m.id \"id\",(select id from yb_course_tree  where id=m.pid) \"pId\",name \"name\",(case when (m.pid=0 or m.pid is null) then 'true' else 'false' end) \"open\",(case when r.costreeid is not null then 'true' else 'false' end) \"checked\"");
+						sb.append(" from ");
+						sb.append(table);
+						sb.append(" m left join (select costreeid from yb_career_relation where careerid in ("
+								+ careerid
+								+ ") GROUP BY costreeid) r on m.id=r.costreeid order by m.level,m.num asc");
+						return Db.init().selectList(sb.toString());
+					}
+				});
+
+		renderJson(json(menu));
+	}
 	/**
 	 * 获取自定义下拉框
 	 * 
