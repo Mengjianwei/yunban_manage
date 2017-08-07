@@ -3,14 +3,36 @@
 	<form data-url="${basePath}/${code}/save" method="post" class="form-horizontal" role="form">
 		<!-- 表单 -->
 		@ var _table="yb_course_tree";
+		@if(level! == 3){
 		@ var _col=[
-		@			  {name:"排序",index:"num",type:"text",newline:true,length:3,required:"required"},
-		@			  {name:"上级课程",index:"pid", type:"selectCostree",value:pid!,newline:false,length:3},
-		@			  {name:"课程名称",index:"name", type:"text",newline:true,length:3,required:"required"},
-		@			  {name:"状态",index:"status", type:"select_902",newline:false,length:3,required:"required"},
-		@			  {name:"层级",index:"level", type:"text",newline:true,length:8}
+		@			  {name:"课程名称",index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"排序",index:"num",type:"number",newline:true,length:3,required:"required"},
+		@			  {name:"上级课程",index:"pid", type:"selectCostree",value:pid!,newline:false,length:3,required:"required"},
+		@			  {name:"状态",index:"status", type:"select_902",value:1,newline:true,length:3,required:"required"},
+		@			  {name:"层级",index:"level", type:"number",value:1,newline:false,length:3,required:"required min=1"},
+		@			  {name:"课程图片", index:"imageid", type:"imgupload",newline:true,length:5,required:"required"}
 		@		   ];
 		@ include("/common/_curd/_add.html",{"col":_col,"table":_table}){}
+		@} else if(level! == 4){
+		@ var _col=[
+		@			  {name:"课程名称",index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"排序",index:"num",type:"number",newline:true,length:3,required:"required"},
+		@			  {name:"上级课程",index:"pid", type:"selectCostree",value:pid!,newline:false,length:3,required:"required"},
+		@			  {name:"状态",index:"status", type:"select_902",value:1,newline:true,length:3,required:"required"},
+		@			  {name:"层级",index:"level", type:"number",value:1,newline:false,length:3,required:"required min=1"},
+		@			  {name:"课程文档", index:"docid", type:"fileupload",newline:false,length:5,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_add.html",{"col":_col,"table":_table}){}
+		@}else {
+		@ var _col=[
+		@			  {name:"课程名称",index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"排序",index:"num",type:"number",newline:true,length:3,required:"required"},
+		@			  {name:"上级课程",index:"pid", type:"selectCostree",value:pid!,newline:false,length:3},
+		@			  {name:"状态",index:"status", type:"select_902",value:1,newline:true,length:3,required:"required"},
+		@			  {name:"层级",index:"level", type:"number",value:1,newline:false,length:3,required:"required min=1"}
+		@		   ];
+		@ include("/common/_curd/_add.html",{"col":_col,"table":_table}){}
+		@}
 		
 		<!-- 按钮 -->
 		@ include("/common/_curd/_btn.html",{btn_save:"新增",btn_close:"关闭"}) {}

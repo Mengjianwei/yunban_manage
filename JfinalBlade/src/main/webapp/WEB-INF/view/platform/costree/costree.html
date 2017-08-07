@@ -32,11 +32,14 @@
 			colModel:_colmodel, 
 			jsonReader:{id:"id"},
 			pager : pager_selector,
+			ondblClickRow : page_view,
 			postData: {sort: "id", order: "asc"}
 		});
 	}
 	
-
+	function page_view(){
+		$("#${code}_view").click();
+	}
 	
 	function initZtree(){
 		var setting = {

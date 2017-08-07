@@ -20,12 +20,10 @@ public class Project extends BaseModel {
 	private Integer id;
 	// 姓名
 	private String project_name;
-	// 密码
-	private String project_code;
 	private Integer mirrorid;
 	private Integer netid;
 	private Integer flavorid;
-	private Integer typeid;
+	private Integer industryid;
 	private String doc_url;
 	private String image_url;
 	private Date create_time;
@@ -46,12 +44,6 @@ public class Project extends BaseModel {
 	public void setProject_name(String project_name) {
 		this.project_name = project_name;
 	}
-	public String getProject_code() {
-		return project_code;
-	}
-	public void setProject_code(String project_code) {
-		this.project_code = project_code;
-	}
 	public Integer getMirrorid() {
 		return mirrorid;
 	}
@@ -65,13 +57,13 @@ public class Project extends BaseModel {
 	public void setNetid(Integer netid) {
 		this.netid = netid;
 	}
-	public Integer getTypeid() {
-		return typeid;
-	}
-	public void setTypeid(Integer typeid) {
-		this.typeid = typeid;
-	}
 	
+	public Integer getIndustryid() {
+		return industryid;
+	}
+	public void setIndustryid(Integer industryid) {
+		this.industryid = industryid;
+	}
 	public String getDoc_url() {
 		return doc_url;
 	}

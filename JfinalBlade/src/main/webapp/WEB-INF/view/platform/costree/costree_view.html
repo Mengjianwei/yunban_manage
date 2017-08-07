@@ -3,11 +3,11 @@
 	<form class="form-horizontal" role="form">
 		<!-- 表单 -->
 		@ var _col=[
-		@			  {name:"排序",index:"num",type:"text",newline:true,length:3},
-		@			  {name:"上级部门",index:"pName", type:"selectDept",newline:false,length:3},
-		@			  {name:"部门简称",index:"simplename", type:"text",newline:true,length:3},
-		@			  {name:"部门全称",index:"fullname", type:"text",newline:false,length:3},
-		@			  {name:"备注",index:"tips", type:"text",newline:true,length:8}
+		@			  {name:"课程名称",index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"排序",index:"num",type:"number",newline:true,length:3,required:"required"},
+		@			  {name:"上级课程",index:"pid", type:"selectCostree",newline:false,length:3},
+		@			  {name:"状态",index:"status", type:"select_902",value:1,newline:true,length:3,required:"required"},
+		@			  {name:"层级",index:"level", type:"number",newline:false,length:3}
 		@		   ];
 		@ include("/common/_curd/_view.html",{"col":_col}){}
 		

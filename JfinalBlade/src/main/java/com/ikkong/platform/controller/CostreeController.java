@@ -59,6 +59,7 @@ public class CostreeController extends UrlPermissController {
 		Costree costree = Blade.create(Costree.class).findById(id);
 		setAttr("model", JsonKit.toJson(costree));
 		setAttr("code", CODE);
+		setAttr("level", costree.getLevel());
 		render(BASE_PATH + "costree_edit.html");
 	}
 
