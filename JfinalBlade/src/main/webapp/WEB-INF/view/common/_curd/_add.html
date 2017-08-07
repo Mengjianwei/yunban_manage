@@ -63,6 +63,9 @@
 				@			else if(x.type=="dropdownDiy"){
 								<blade:dropdown  name="${table!x.table}.${x.index!}" value="${x.value!0}" type="diy" source="${x.source!}" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>
 				@			}
+				@			else if(x.type=="selectCostree"){
+								<blade:select  name="${table!x.table}.${x.index!}" value="${x.value!0}" type="costree" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>
+				@			}
 				@			else if(x.type=="selectDept"){
 								<blade:select  name="${table!x.table}.${x.index!}" value="${x.value!0}" type="dept" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>
 				@			}

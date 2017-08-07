@@ -51,6 +51,10 @@
 				@			else if(x.type=="image"){
 								<img id="_${x.index!}" data-type="image" data-auto="${x.auto!}" style="padding:2px; border:1px solid #ccc;cursor:pointer;width:${x.width!'168px'};height:${x.height!'110px'};" name="${table!x.table}.${x.index!}" src="${x.src!}"></img>
 				@			}
+				@			else if(func.like(x.type,"selectself_")){
+				@                var num=strutil.replace(x.type,"selectself_","");
+								<blade:select code="${num}" name="${table!x.table}.${x.index!}" value="${x.value!0}" type="self" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>
+				@			}
 				@			else if(func.like(x.type,"select_")){
 				@                var num=strutil.replace(x.type,"select_","");
 								<blade:select code="${num}" name="${table!x.table}.${x.index!}" value="${x.value!0}" type="dict" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>
@@ -74,6 +78,9 @@
 				@			}
 				@			else if(x.type=="dropdownDiy"){
 								<blade:dropdown  name="${table!x.table}.${x.index!}" value="${x.value!0}" type="diy" source="${x.source!}" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>
+				@			}
+				@			else if(x.type=="selectCostree"){
+								<blade:select  name="${table!x.table}.${x.index!}" value="${x.value!0}" type="costree" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>
 				@			}
 				@			else if(x.type=="selectDept"){
 								<blade:select  name="${table!x.table}.${x.index!}" value="${x.value!0}" type="dept" tail="${x.tail!}" intercept="${x.intercept!}" required="${x.required!}"/>

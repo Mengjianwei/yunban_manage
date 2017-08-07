@@ -17,6 +17,10 @@ encoding//src/main/webapp/WEB-INF/view/platform/career/career.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/career/career_add.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/career/career_edit.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/career/career_view.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/platform/costree/costree.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/platform/costree/costree_add.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/platform/costree/costree_edit.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/platform/costree/costree_view.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/course/course.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/course/course_add.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/course/course_edit.html=UTF-8
@@ -42,14 +46,25 @@ encoding//src/main/webapp/WEB-INF/view/platform/mirror/mirror_add.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/mirror/mirror_edit.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/mirror/mirror_view.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/notice/notice_add.html=UTF-8
+<<<<<<< HEAD
 encoding//src/main/webapp/WEB-INF/view/platform/section/section.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/section/section_add.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/section/section_edit.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/section/section_view.html=UTF-8
+=======
+encoding//src/main/webapp/WEB-INF/view/platform/project/project.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/platform/project/project_add.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/platform/project/project_edit.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/platform/project/project_view.html=UTF-8
+>>>>>>> 84034b905385bed8605bdc852401810593f189c0
 encoding//src/main/webapp/WEB-INF/view/platform/student/student.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/student/student_add.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/student/student_edit.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/platform/student/student_view.html=UTF-8
 encoding//src/main/webapp/WEB-INF/view/system/dept/dept.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/system/dept/dept_add.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/system/menu/_widget/_menu_icon.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/system/role/role.html=UTF-8
+encoding//src/main/webapp/WEB-INF/view/system/role/role_authority.html=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

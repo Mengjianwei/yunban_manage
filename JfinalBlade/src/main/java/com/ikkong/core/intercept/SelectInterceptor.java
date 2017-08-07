@@ -43,5 +43,10 @@ public class SelectInterceptor implements ISelect{
 	public IQuery roleIntercept() {
 		return new QueryInterceptor();
 	}
+
+	@Override
+	public IQuery costreeIntercept() {
+		return new QueryInterceptor();
+	}
 	
 }

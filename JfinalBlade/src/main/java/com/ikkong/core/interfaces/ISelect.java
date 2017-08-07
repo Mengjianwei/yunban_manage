@@ -14,4 +14,6 @@ public interface ISelect {
 	
 	IQuery roleIntercept();
 	
+	IQuery costreeIntercept();
+	
 }

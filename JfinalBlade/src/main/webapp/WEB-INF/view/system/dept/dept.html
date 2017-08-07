@@ -52,6 +52,7 @@
 				}
 			};
 		$.post("${basePath}/cache/deptTreeList", function(data){
+			
 			if(data.code===0){
 				$.fn.zTree.init($("#zTree"), setting, data.data);
 			}

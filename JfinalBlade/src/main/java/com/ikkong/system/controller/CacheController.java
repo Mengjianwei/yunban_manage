@@ -234,7 +234,6 @@ public class CacheController extends BaseController{
 						return Db.init().selectList("select id \"id\",pId \"pId\",simpleName as \"name\",(case when (pId=0 or pId is null) then 'true' else 'false' end) \"open\" from  TFW_DEPT ", Record.create(), new AopContext("ztree"), Cst.me().getDefaultSelectFactory().deptIntercept());
 					}
 				});
-
 		renderJson(json(dept));
 	}
 
@@ -267,7 +266,6 @@ public class CacheController extends BaseController{
 						return Db.init().selectList("select code \"id\",pCode \"pId\",name \"name\",(case when levels=1 then 'true' else 'false' end) \"open\" from TFW_MENU where status=1 order by levels asc,num asc");
 					}
 				});
-
 		renderJson(json(menu));
 	}
 
@@ -320,6 +318,16 @@ public class CacheController extends BaseController{
 				});
 
 		renderJson(json(menu));
+	}
+	
+	public void cosTreeList() {
+		List<Map<String, Object>> costree = CacheKit.get(COURSE_TREE_CACHE, "course_tree_all",
+				new IDataLoader() {
+					public Object load() {
+						return Db.init().selectList("select id \"id\",pid \"pId\",name as \"name\",(case when (pId=0 or pId is null) then 'true' else 'false' end) \"open\" from yb_course_tree order by level asc,num asc");
+					}
+				});
+		renderJson(json(costree));
 	}
 	
 	/**

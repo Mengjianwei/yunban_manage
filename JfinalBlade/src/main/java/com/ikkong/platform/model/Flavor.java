@@ -1,3 +1,4 @@
+
 package com.ikkong.platform.model;
 
 import java.util.Date;
@@ -22,10 +23,10 @@ public class Flavor extends BaseModel {
 	private String flavor_code;
 	// 专业名
 	private String flavor_name;
+
      //描述	
 	private String flavor_describe;
 	
-
 
 	public String getFlavor_code() {
 		return flavor_code;

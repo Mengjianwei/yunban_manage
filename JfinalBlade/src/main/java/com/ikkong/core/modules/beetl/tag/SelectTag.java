@@ -84,6 +84,10 @@ public class SelectTag extends Tag {
 					sql = "select id as ID,doc_name as TEXT from  yb_doc";
 				}
 				intercept = Cst.me().getDefaultSelectFactory().dictIntercept();
+			}else if (type.equals("costree")) {
+				CACHE_NAME = ConstCache.COURSE_TREE_CACHE;
+				sql = "select id as ID,pid ,name as TEXT from  yb_course_tree";
+				intercept = Cst.me().getDefaultSelectFactory().costreeIntercept();
 			}else if (type.equals("user")) {
 				CACHE_NAME = ConstCache.USER_CACHE;
 				sql = "select ID,name as TEXT from  TFW_USER where status=1";

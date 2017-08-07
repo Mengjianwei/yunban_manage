@@ -1,0 +1,17 @@
+@layout("/common/_curd/_container.html"){
+	<!-- PAGE CONTENT BEGINS -->
+	<form class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _col=[
+		@			  {name:"课程名称",index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"排序",index:"num",type:"number",newline:true,length:3,required:"required"},
+		@			  {name:"上级课程",index:"pid", type:"selectCostree",newline:false,length:3},
+		@			  {name:"状态",index:"status", type:"select_902",value:1,newline:true,length:3,required:"required"},
+		@			  {name:"层级",index:"level", type:"number",newline:false,length:3}
+		@		   ];
+		@ include("/common/_curd/_view.html",{"col":_col}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html",{btn_close:"关闭"}) {}
+	</form>
+@}

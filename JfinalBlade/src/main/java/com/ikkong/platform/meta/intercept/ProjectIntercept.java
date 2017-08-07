@@ -30,15 +30,13 @@ public class ProjectIntercept extends PageIntercept {
 			Object mirrorid = map.get("mirrorid");
 			Object netid = map.get("netid");
 			Object flavorid = map.get("flavorid");
-			Object typeid = map.get("typeid");
 			Mirror mirror = Blade.create(Mirror.class).findFirstBy("id = #{id}", Record.create().set("id", mirrorid));
 			Net net = Blade.create(Net.class).findFirstBy("id = #{id}", Record.create().set("id", netid));
 			Flavor flavor = Blade.create(Flavor.class).findFirstBy("id = #{id}", Record.create().set("id", flavorid));
-			CourseType type = Blade.create(CourseType.class).findFirstBy("id = #{id}", Record.create().set("id", typeid));
 			map.put("mirror_name", mirror.getMirror_name());
 			map.put("net_name", net.getNet_name());
 			map.put("flavor_name", flavor.getFlavor_describe());
-			map.put("type_name", type.getType_name());
+			map.put("industry_name", Func.getDictName(905, map.get("industryid")));
 			map.put("status", Func.getDictName(902, map.get("status")));
 		}
 	}

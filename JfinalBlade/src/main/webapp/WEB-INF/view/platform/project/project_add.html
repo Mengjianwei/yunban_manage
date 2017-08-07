@@ -4,9 +4,8 @@
 		<!-- 表单 -->
 		@ var _table="yb_project";
 		@ var _col=[
-		@			{name:"项目名称", index:"project_name", type:"text",newline:true,length:3,required:"required"},
-		@			{name:"编码", index:"project_code", type:"text",newline:false,length:3,required:"required"},
-		@			{name:"类型", index:"typeid", type:"selectself_type_name",newline:true,length:3,required:"required"},
+		@			{name:"项目名称", index:"project_name", type:"text",newline:true,length:5,required:"required"},
+		@			{name:"行业", index:"industryid", type:"select_905",newline:true,length:3,required:"required"},
 		@			{name:"镜像", index:"mirrorid", type:"selectself_mirror_name",newline:false,length:3,required:"required"},
 		@			{name:"网络", index:"netid", type:"selectself_net_name",newline:true,length:3,required:"required"},
 		@			{name:"硬件资源", index:"flavorid", type:"selectself_flavor_name",newline:false,length:3,required:"required"},
