@@ -1,5 +1,6 @@
 package com.ikkong.platform.model;
 
+import org.beetl.sql.core.annotatoin.AutoID;
 import org.beetl.sql.core.annotatoin.Table;
 
 import com.ikkong.core.annotation.BindID;
@@ -17,6 +18,7 @@ public class Doc extends BaseModel {
 	private String doc_name;
 	//文本
 	private String doc_info;
+	@AutoID
 	public Integer getId() {
 		return id;
 	}

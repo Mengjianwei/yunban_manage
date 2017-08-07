@@ -1,0 +1,21 @@
+@layout("/common/_curd/_container.html"){
+
+	<form class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _col=[
+		@			  {name:"用户名", index:"user_name", type:"text", newline:true,length:5,required:"required"},
+		@			  {name:"课程名称", index:"course_name", type:"text", newline:true,length:5,required:"required"},
+		@			  {name:"虚拟机编码", index:"server_code", type:"text", newline:true,length:5,required:"required"},
+		@			  {name:"试验时间", index:"create_time", type:"test", newline:true,length:5,required:"required"},
+		@			  {name:"实验状态", index:"status", type:"text", newline:true,length:5,required:"required"},
+		@			  {name:"实验报告", index:"reportid", type:"text", newline:true,length:5,required:"required"},
+		@			  {name:"实验分数", index:"score", type:"text", newline:true,length:5,required:"required"},
+		@			  {name:"评价", index:"level", type:"select_906",newline:true,length:5,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_view.html", {"col":_col}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_close:"关闭"}) {}
+	</form>
+
+@}
