@@ -9,6 +9,9 @@
 		@			  {name:"课程名称",index:"name", type:"text",newline:true,length:8,required:"required"},
 		@			  {name:"排序",index:"num",type:"number",newline:true,length:3,required:"required"},
 		@			  {name:"上级课程",index:"pid", type:"selectCostree",value:pid!,newline:false,length:3,required:"required"},
+		@			  {name:"镜像", index:"mirrorid",type:"selectself_mirror_name",newline:true,length:8,required:"required"},
+		@			  {name:"网络", index:"netid",type:"selectself_net_name",newline:true,length:3,required:"required"},
+		@			  {name:"硬件", index:"flavorid",type:"selectself_flavor_name",newline:false,length:3,required:"required"},
 		@			  {name:"状态",index:"status", type:"select_902",value:1,newline:true,length:3,required:"required"},
 		@			  {name:"层级",index:"level", type:"number",value:1,newline:false,length:3,required:"required min=1"},
 		@			  {name:"课程图片", index:"imageid", type:"imgupload",newline:true,length:5,required:"required"}

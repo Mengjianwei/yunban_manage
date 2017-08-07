@@ -5,9 +5,8 @@
 		@ var _col=[
 		@			  {name:"专业名称", index:"major_name", type:"text",newline:true,length:3,required:"required"},
 		@			  {name:"编码", index:"major_code", type:"text",newline:false,length:3,required:"required"},
-		@			  {name:"实验类型", index:"typeid", type:"selectself_type_name",newline:true,length:3,required:"required"},
-		@			  {name:"年级", index:"grade_name", type:"text",newline:false,length:3,required:"required"},
-		@			  {name:"班级", index:"class_name", type:"text",newline:true,length:5,required:"required"}
+		@			  {name:"年级", index:"grade_name", type:"text",newline:true,length:3,required:"required"},
+		@			  {name:"班级", index:"class_name", type:"text",newline:false,length:3,required:"required"}
 		@		   ];
 		@ include("/common/_curd/_view.html", {"col":_col}){}
 		

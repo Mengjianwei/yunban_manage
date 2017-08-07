@@ -19,6 +19,9 @@ public class Costree extends BaseModel {
 	private Integer imageid; //接口地址
 	private Integer docid; //接口地址
 	private Integer level; //层级
+	private Integer mirrorid; //镜像
+	private Integer netid; //网络
+	private Integer flavorid; //硬件
 	
 
 	@AutoID
@@ -84,6 +87,30 @@ public class Costree extends BaseModel {
 
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+
+	public Integer getMirrorid() {
+		return mirrorid;
+	}
+
+	public void setMirrorid(Integer mirrorid) {
+		this.mirrorid = mirrorid;
+	}
+
+	public Integer getNetid() {
+		return netid;
+	}
+
+	public void setNetid(Integer netid) {
+		this.netid = netid;
+	}
+
+	public Integer getFlavorid() {
+		return flavorid;
+	}
+
+	public void setFlavorid(Integer flavorid) {
+		this.flavorid = flavorid;
 	}
 
 }

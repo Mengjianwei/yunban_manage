@@ -6,6 +6,7 @@ import com.ikkong.core.jfinal.ext.kit.JsonKit;
 import com.ikkong.core.jfinal.ext.shiro.ShiroKit;
 import com.ikkong.core.toolbox.Func;
 import com.ikkong.core.toolbox.Record;
+import com.ikkong.platform.meta.intercept.CostreeIntercept;
 import com.ikkong.platform.model.Costree;
 import com.ikkong.system.controller.base.AdminBaseController;
 import com.ikkong.system.controller.base.UrlPermissController;
@@ -38,7 +39,7 @@ public class CostreeController extends UrlPermissController {
 	}
 	
 	public void list() {
-		Object gird = paginate(LIST_SOURCE);
+		Object gird = paginate(LIST_SOURCE,new CostreeIntercept());
 		renderJson(gird);
 	}
 	

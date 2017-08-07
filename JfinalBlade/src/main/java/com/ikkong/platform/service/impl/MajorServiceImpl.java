@@ -1,6 +1,8 @@
 package com.ikkong.platform.service.impl;
 
 import com.ikkong.core.base.service.impl.BaseService;
+import com.ikkong.core.dao.Db;
+import com.ikkong.core.toolbox.Func;
 import com.ikkong.platform.model.Career;
 import com.ikkong.platform.model.Major;
 import com.ikkong.platform.model.Student;
@@ -13,5 +15,27 @@ import com.ikkong.platform.service.StudentService;
  * 2016-10-08 15:59:45
  */
 public class MajorServiceImpl extends BaseService<Major> implements MajorService{
+	
+	@Override
+	public boolean saveRelation(String ids, String majorid) {
+		Db dao = Db.init();
+		dao.deleteByIds("yb_major_relation", "majorid", majorid);
+		
+		String sql = "";
+		String insertSql = "";
+		String union_all = "";
+		String[] id = ids.split(",");
+		for (int i = 0; i < id.length; i++) {
+			union_all = (i < id.length - 1) ? " union all " : "";
+			sql += " (select " + id[i] + " costreeid," + majorid + " majorid "
+					+ ")" + union_all;
+		}
+
+		sql = "select i.* from (" + sql + ") i";
+		insertSql = "insert into yb_major_relation(costreeid,majorid) ";
+
+		int cnt = dao.update(insertSql + sql, null);
+		return cnt > 0;
+	}
 
 }

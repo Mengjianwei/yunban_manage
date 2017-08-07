@@ -11,11 +11,10 @@
 
 	function initGrid(){
 		var grid_url = ctx + "/${code}/list";
-		var _colnames = ["ID", "职业名称", "编码", "课程阶段"];
+		var _colnames = ["ID", "职业名称", "编码"];
 		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
 						{name:"career_name", index:"career_name", width:100},
-						{name:"career_code", index:"career_code", width:100},
-						{name:"phase_name", index:"phaseid", width:100}];
+						{name:"career_code", index:"career_code", width:100}];
 
 		jQuery(grid_selector).jqGrid({
 			url : grid_url,
@@ -42,8 +41,7 @@
 			@ var _col=[
 			@		{name:"ID", index:"id", type:"text"},
 			@	    {name:"职业名称", index:"career_name", type:"text"},
-			@		{name:"编码", index:"career_code", type:"text"},
-			@		{name:"课程阶段", index:"phaseid", type:"selectself_phase_name"}
+			@		{name:"编码", index:"career_code", type:"text"}
 			@];
 			@ include("/common/_function/_search.html",{"col":_col}){}
 			<!-- 按钮 -->

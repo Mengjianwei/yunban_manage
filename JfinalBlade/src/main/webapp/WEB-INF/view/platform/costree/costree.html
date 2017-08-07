@@ -18,11 +18,14 @@
 	
 	function initGrid(){
 		var grid_url = ctx+"/${code}/list";//查询列表接口
-		var _colnames=[ "ID","名称", "上级名称","层级"];
+		var _colnames=[ "ID","名称", "上级名称","镜像","网络","硬件","状态"];
 		var _colmodel=[   {name:"id",index:"id", width:80,hidden:true},
 						  {name:"name",index:"name", width:100},
 						  {name:"PNAME",index:"pid", width:100},
-						  {name:"level",index:"level", width:30}
+						  {name:"mirror_name",index:"mirrorid", width:100},
+						  {name:"net_name",index:"netid", width:100},
+						  {name:"flavor_describe",index:"flavorid", width:100},
+						  {name:"status",index:"status", width:100}
 						];
 		
 		jQuery(grid_selector).jqGrid({

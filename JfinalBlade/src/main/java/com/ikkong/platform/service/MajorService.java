@@ -10,5 +10,7 @@ import com.ikkong.platform.model.Student;
  * 2016-10-08 15:59:45
  */
 public interface MajorService extends IService<Major>{
+	
+	boolean saveRelation(String ids, String majorid);
 
 }
