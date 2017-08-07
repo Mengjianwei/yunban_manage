@@ -10,7 +10,7 @@
 	});
 
 	function initGrid(){
-		var grid_url = ctx + "/${code}/list";
+		var grid_url = ctx + "/course/list";
 		var _colnames = ["ID", "编码", "课程名称", "阶段类型","镜像","课程描述","状态","创建时间","网络","硬件"];
 		var _colmodel = [{name:"id", index:"id", width:100,hidden:true},
 						{name:"course_code", index:"course_code", width:100},
@@ -21,7 +21,8 @@
 						{name:"status", index:"status", width:100},
 						{name:"create_time", index:"create_time", width:100},
 						{name:"net_name", index:"netid", width:100},
-						{name:"flavor_describe", index:"flavorid", width:100}];
+						{name:"flavor_describe", index:"flavorid", width:100}
+						];
 		jQuery(grid_selector).jqGrid({
 			url : grid_url,
 		    shrinkToFit : true,

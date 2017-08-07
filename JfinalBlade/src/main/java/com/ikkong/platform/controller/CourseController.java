@@ -10,7 +10,7 @@ import com.ikkong.system.controller.base.UrlPermissController;
 public class CourseController extends UrlPermissController {
 
 	
-	private static String CODE = "course";
+	private static String CODE = "coursee";
 	private static String PERFIX = "yb_course";
 	private static String LIST_SOURCE = "Course.list";
 	private static String BASE_PATH = "/platform/course/";
@@ -25,7 +25,6 @@ public class CourseController extends UrlPermissController {
 	}
 
 	public void add() {
-		System.out.println("99999999999999999999999999999999999999999999999999999999999");
 		setAttr("code", CODE);
 		render(BASE_PATH + "course_add.html");
 	}
